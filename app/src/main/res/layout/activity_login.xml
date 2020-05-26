@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="18dp"
+    android:paddingRight="18dp" >
+
+
+        <TextView
+            android:id="@+id/txtMonto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imaUIs"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:text="Examen1"
+            android:textColor="@color/colorPrimaryDark"
+            android:textIsSelectable="true"
+
+            android:layout_alignParentLeft="true"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/etUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtMonto"
+            android:ems="10"
+            android:hint="Usuario"
+            android:inputType="textPersonName"
+            android:textSize="24sp" />
+
+
+        <EditText
+            android:id="@+id/etPassW"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etUsuario"
+            android:ems="10"
+            android:hint="Contraeña"
+            android:inputType="textPassword"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btnIngresar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="ingresar"
+            android:text="INGRESAR"
+            android:textSize="24sp"
+            android:layout_below= "@+id/etPassW"/>
+
+</RelativeLayout>

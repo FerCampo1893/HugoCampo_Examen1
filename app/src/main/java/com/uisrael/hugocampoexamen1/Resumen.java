@@ -7,13 +7,12 @@ import android.widget.TextView;
 
 public class Resumen extends AppCompatActivity {
     Bundle datoRecibir;
-    TextView recibir, montopagar, nombreUsuario, res1, res2, res3;
+    TextView recibir = findViewById(R.id.etUsuario), montopagar, nombreUsuario, res1, res2, res3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resumen);
 
-        recibir=findViewById(R.id.etUsuario);
         nombreUsuario=findViewById(R.id.etNombre);
         montopagar=findViewById(R.id.etMonto);
         res1=findViewById(R.id.etPre1);

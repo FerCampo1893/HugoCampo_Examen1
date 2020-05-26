@@ -45,8 +45,8 @@ public class Registro extends AppCompatActivity {
     public void Guardar (View v){
         Intent envio= new Intent(Registro.this,Encuesta.class);
         envio.putExtra("datoEnviado",recibir.getText().toString());
-        envio.putExtra("monto",String.valueOf(valortotal));
-        envio.putExtra("nombre",nombre.getText().toString());
+        envio.putExtra("valor",String.valueOf(valortotal));
+        envio.putExtra("nombreEstudiante",nombre.getText().toString());
         Toast.makeText(getApplicationContext(),"guardado con éxito.",Toast.LENGTH_SHORT).show();
         startActivity(envio);
     }

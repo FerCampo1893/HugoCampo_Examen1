@@ -22,8 +22,8 @@ public class Resumen extends AppCompatActivity {
 
         datoRecibir=getIntent().getExtras();
         String recibirDatos=datoRecibir.getString("datoEnviado");
-        String monto=datoRecibir.getString("monto");
-        String nombre=datoRecibir.getString("nombre");
+        String monto=datoRecibir.getString("valor");
+        String nombre=datoRecibir.getString("nombreEstudiante");
         String enviado1=datoRecibir.getString("enviado1");
         String enviado2=datoRecibir.getString("enviado2");
         String enviado3=datoRecibir.getString("enviado3");

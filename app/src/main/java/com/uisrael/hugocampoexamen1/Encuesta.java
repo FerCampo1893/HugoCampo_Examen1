@@ -15,11 +15,11 @@ public class Encuesta extends AppCompatActivity {
     String monto,nombre;
     StringBuffer check= new StringBuffer();
     Bundle datoRecibir;
+    StringBuffer radio=new StringBuffer();
     TextView recibir, usuario;
     EditText  preg1;
     RadioButton op1, op2;
     CheckBox cb1, cb2, cb3;
-    StringBuffer radio=new StringBuffer();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,8 +62,8 @@ public class Encuesta extends AppCompatActivity {
 
         Intent intentResumen= new Intent(Encuesta.this,Resumen.class);
         intentResumen.putExtra("datoEnviado",recibir.getText().toString());
-        intentResumen.putExtra("monto",monto.toString());
-        intentResumen.putExtra("nombre",nombre.toString());
+        intentResumen.putExtra("valor",monto.toString());
+        intentResumen.putExtra("nombreEstudiante",nombre.toString());
         intentResumen.putExtra("check",check.toString());
         intentResumen.putExtra("radio",radio.toString());
         intentResumen.putExtra("pregunta",preg1.getText().toString());

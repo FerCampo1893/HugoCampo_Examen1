@@ -9,13 +9,17 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.TextView;
 
 public class Encuesta extends AppCompatActivity {
-    Bundle usuarioRecibido;
-    EditText recibir, pregunta2;
-    RadioButton op1, op2,op3;
+    String monto,nombre;
+    StringBuffer check= new StringBuffer();
+    Bundle datoRecibir;
+    TextView recibir, usuario;
+    EditText  preg1;
+    RadioButton op1, op2;
     CheckBox cb1, cb2, cb3;
-    Button btnGuardar;
+    StringBuffer radio=new StringBuffer();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,35 +33,40 @@ public class Encuesta extends AppCompatActivity {
         cb2 = findViewById(R.id.cbOp2);
         cb3 = findViewById(R.id.cbOp3);
         //pregunta
-        pregunta2 = findViewById(R.id.etRes1);
+        preg1 = findViewById(R.id.etRes1);
 
-        btnGuardar = findViewById(R.id.btnValidar);
+        recibir = findViewById(R.id.etUsuario);
+        datoRecibir= getIntent().getExtras(); // obetengo el dato
+        String RecibirDato = datoRecibir.getString("datoEnviado");
+        recibir.setText(RecibirDato);//envio a la caja de texto
 
-        usuarioRecibido = getIntent().getExtras();
-        String recibirDato = usuarioRecibido.getString("datoEnviado");
-        recibir.setText(recibirDato);
+        monto=datoRecibir.getString("monto");
+        nombre=datoRecibir.getString("nombre");
     }
-    public void Preguntas2(View v){
-        Intent intentrespuestas2 = new Intent(this, Resumen.class);
+    public void guardarEncuesta(View v){
         if(cb1.isChecked()==true){
-            intentrespuestas2.putExtra("inteligencia", cb1.getText().toString());
+            check.append(cb1.getText().toString()).append(" - ");
         }
-        if(cb2.isChecked()==true) {
-            intentrespuestas2.putExtra("moviles", cb2.getText().toString());
+        if(cb2.isChecked()==true){
+            check.append(cb2.getText().toString()).append(" - ");
         }
-        if(cb3.isChecked()==true) {
-            intentrespuestas2.putExtra("auditoria", cb3.getText().toString());
+        if(cb3.isChecked()==true){
+            check.append(cb3.getText().toString());
         }
         if(op1.isChecked()==true){
-            intentrespuestas2.putExtra("seleccion1", op1.getText().toString());
+            radio.append("SI");
         }
         if(op2.isChecked()==true){
-            intentrespuestas2.putExtra("seleccion1", op2.getText().toString());
+            radio.append("NO");
         }
 
-
-        intentrespuestas2.putExtra("respuesta", pregunta2.getText().toString());
-        startActivity(intentrespuestas2);
-
+        Intent intentResumen= new Intent(Encuesta.this,Resumen.class);
+        intentResumen.putExtra("datoEnviado",recibir.getText().toString());
+        intentResumen.putExtra("monto",monto.toString());
+        intentResumen.putExtra("nombre",nombre.toString());
+        intentResumen.putExtra("check",check.toString());
+        intentResumen.putExtra("radio",radio.toString());
+        intentResumen.putExtra("pregunta",preg1.getText().toString());
+        startActivity(intentResumen);
     }
 }

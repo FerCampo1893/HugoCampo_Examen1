@@ -24,7 +24,7 @@ public class Login extends AppCompatActivity {
         String nombre = etUsuario1.getText().toString();
         String password = etPass.getText().toString();
         //validar usuario y contraseña
-        if(nombre.equals("1111") && password.equals("1111")) {
+        if(nombre.equals("11") && password.equals("11")) {
             Intent intentIngreso = new Intent(this, Registro.class);
             intentIngreso.putExtra("datoEnviado", etUsuario1.getText().toString());
             Toast.makeText(getApplicationContext(),"Ingresando", Toast.LENGTH_LONG).show();

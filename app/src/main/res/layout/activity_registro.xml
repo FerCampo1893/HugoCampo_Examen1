@@ -12,17 +12,15 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="60dp"
         android:orientation="horizontal"
         android:paddingTop="05dp">
-
         <ImageView
-            android:id="@+id/imaUIs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginTop="15dp"
-            app:srcCompat="@drawable/Logo.pgn" />
+            android:id="@+id/img1"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/logo" />
     </LinearLayout>
 
     <LinearLayout
@@ -31,14 +29,14 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/txtMonto"
+            android:id="@+id/txtUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="Nombre"
+            android:layout_marginTop="08dp"
+            android:text="Usuario"
             android:textColor="@color/colorPrimaryDark"
             android:textIsSelectable="true"
-            android:textSize="20dp" />
+            android:textSize="14dp" />
 
         <EditText
             android:id="@+id/etUsuario"
@@ -47,18 +45,44 @@
             android:ems="10"
             android:hint="Nombre"
             android:inputType="textPersonName"
-            android:textSize="24sp"
-            tools:layout_editor_absoluteX="63dp"
-            tools:layout_editor_absoluteY="261dp" />
+            android:textSize="14sp"
+             />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="08dp"
+            android:text="Nombre"
+            android:textColor="@color/colorPrimaryDark"
+            android:textIsSelectable="true"
+            android:textSize="14dp" />
+
+        <EditText
+            android:id="@+id/etNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Nombre"
+            android:inputType="textPersonName"
+            android:textSize="14sp"
+            />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="Monto"
+            android:layout_marginTop="08dp"
+            android:text="Monto Inicial"
             android:textColor="@color/colorPrimaryDark"
             android:textIsSelectable="true"
-            android:textSize="20dp" />
+            android:textSize="14dp" />
 
 
         <EditText
@@ -72,65 +96,52 @@
             android:id="@+id/txtPagoMensual"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="08dp"
             android:text="Pago Mensual"
             android:textColor="@color/colorPrimaryDark"
             android:textIsSelectable="true"
-            android:textSize="20dp" />
+            android:textSize="14dp" />
 
 
         <EditText
             android:id="@+id/etPago"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
+            android:ems="8"
             android:inputType="number" />
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnGuardar"
-            style="?android:attr/buttonStyleSmall"
+            android:id="@+id/btnCalcular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/Opciones"
-            android:layout_marginTop="18dp"
-            android:onClick="Preguntas2"
+            android:layout_marginTop="08dp"
+            android:onClick="Cuota"
             android:text="Calcular" />
 
-
-
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/etCalculo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:layout_below="@+id/etCalculo"
-            android:inputType="number" />
-
-    </LinearLayout>
+        android:orientation="horizontal"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <Button
-            style="?android:attr/buttonStyleSmall"
+
+            android:id="@+id/btnGuardar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/Opciones"
-            android:layout_marginTop="18dp"
-            android:onClick="Preguntas2"
+            android:layout_marginTop="07dp"
+            android:onClick="Guardar"
             android:text="Guardar" />
 
     </LinearLayout>

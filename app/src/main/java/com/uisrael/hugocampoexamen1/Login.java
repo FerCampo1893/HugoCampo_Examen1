@@ -31,6 +31,7 @@ public class Login extends AppCompatActivity {
             startActivity(intentIngreso);
         }
         else{
+
             Toast.makeText(getApplicationContext(),"Usuario o Clave Incorrecto", Toast.LENGTH_LONG).show();
         }
     }

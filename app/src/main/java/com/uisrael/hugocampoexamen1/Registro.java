@@ -24,7 +24,7 @@ public class Registro extends AppCompatActivity {
         pagoInicial = findViewById(R.id.etMonto);
         cuota1 = findViewById(R.id.etPago);
         //totalPagar = findViewById(R.id.etCalculo);
-        nombre= findViewById(R.id.etUsuario);
+        nombre= findViewById(R.id.etNombre);
 // usuario recibido
         recibir = findViewById(R.id.etUsuario);
         datoRecibir= getIntent().getExtras(); // obetengo el dato

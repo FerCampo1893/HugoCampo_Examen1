@@ -21,17 +21,17 @@ public class Resumen extends AppCompatActivity {
         recibir = findViewById(R.id.etUsuario);
         datoRecibir=getIntent().getExtras();
         String recibirDatos=datoRecibir.getString("datoEnviado");
-        String monto=datoRecibir.getString("valor");
-        String nombre=datoRecibir.getString("nombreEstudiante");
-        String enviado1=datoRecibir.getString("enviado1");
-        String enviado2=datoRecibir.getString("enviado2");
-        String enviado3=datoRecibir.getString("enviado3");
+        String valor=datoRecibir.getString("valor");
+        String estudiante=datoRecibir.getString("nombreEstudiante");
+        String preg1=datoRecibir.getString("enviado1");
+        String check=datoRecibir.getString("enviado2");
+        String radio=datoRecibir.getString("enviado3");
         recibir.setText(recibirDatos);
-        montopagar.setText(monto);
-        nombreUsuario.setText(nombre);
-        res1.setText(enviado1);
-        res2.setText(enviado2);
-        res3.setText(enviado3);
+        montopagar.setText(valor);
+        nombreUsuario.setText(estudiante);
+        res1.setText(preg1);
+        res2.setText(check);
+        res3.setText(radio);
 
     }
 }

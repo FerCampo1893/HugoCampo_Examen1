@@ -12,12 +12,14 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 public class Encuesta extends AppCompatActivity {
-    String monto,nombre;
-    StringBuffer check= new StringBuffer();
+
+
     Bundle datoRecibir;
     StringBuffer radio=new StringBuffer();
+    StringBuffer check= new StringBuffer();
     TextView recibir, usuario;
     EditText  preg1;
+    String monto,nombre;
     RadioButton op1, op2;
     CheckBox cb1, cb2, cb3;
     @Override
@@ -40,33 +42,33 @@ public class Encuesta extends AppCompatActivity {
         String RecibirDato = datoRecibir.getString("datoEnviado");
         recibir.setText(RecibirDato);//envio a la caja de texto
 
-        monto=datoRecibir.getString("monto");
-        nombre=datoRecibir.getString("nombre");
+        monto=datoRecibir.getString("valor");
+        nombre=datoRecibir.getString("nombreEstudiante");
     }
     public void guardarEncuesta(View v){
+        Intent intentResumen= new Intent(Encuesta.this,Resumen.class);
+        intentResumen.putExtra("datoEnviado",recibir.getText().toString());
+        intentResumen.putExtra("valor",monto.toString());
+        intentResumen.putExtra("nombreEstudiante",nombre.toString());
         if(cb1.isChecked()==true){
             check.append(cb1.getText().toString()).append(" - ");
         }
         if(cb2.isChecked()==true){
             check.append(cb2.getText().toString()).append(" - ");
         }
+
         if(cb3.isChecked()==true){
             check.append(cb3.getText().toString());
         }
+        intentResumen.putExtra("enviado2",check.toString());
         if(op1.isChecked()==true){
             radio.append("SI");
         }
         if(op2.isChecked()==true){
             radio.append("NO");
         }
-
-        Intent intentResumen= new Intent(Encuesta.this,Resumen.class);
-        intentResumen.putExtra("datoEnviado",recibir.getText().toString());
-        intentResumen.putExtra("valor",monto.toString());
-        intentResumen.putExtra("nombreEstudiante",nombre.toString());
-        intentResumen.putExtra("check",check.toString());
-        intentResumen.putExtra("radio",radio.toString());
-        intentResumen.putExtra("pregunta",preg1.getText().toString());
+        intentResumen.putExtra("enviado3",radio.toString());
+        intentResumen.putExtra("enviado1",preg1.getText().toString());
         startActivity(intentResumen);
     }
 }
